@@ -1,6 +1,6 @@
 # Privacy Policy: Pop Out Player
 
-_Last updated: 22 November 2026_
+_Last updated: 23 November 2026_
 
 Pop Out Player is a browser extension, with a small helper program on your PC, that opens online videos in a video
 player installed on your own computer. This policy explains what it touches. In short: **it collects nothing, sends
@@ -40,6 +40,8 @@ Using the browser's local extension storage (`chrome.storage.local`), on your co
 - whether a player opened by the extension is still running;
 - whether the helper is installed and, for each player, where the helper found it and its yt-dlp on your PC, so the
   setup page can show what is missing.
+
+The player location you choose on the setup page is saved in the helper's settings file on your PC.
 
 You can remove playlist entries one by one or with **Clear**, and delete saved playlists in My Playlists; uninstalling
 the extension deletes all of it.
