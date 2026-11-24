@@ -25,32 +25,34 @@ recent MPC-BE installers and PotPlayer's yt-dlp extension come with it; for anyt
 **[Player setup](PLAYER-SETUP.md)**.
 
 ## Settings
-Create a `config.json` only if you need to change something; every key is optional. Put it in
+The helper finds your players by itself, and if one is somewhere unusual, the setup page's **Choose…** button
+saves its location for you. Create a `config.json` only if you need to change something else; every key is optional. Put it in
 **`%LOCALAPPDATA%\mpv-in-browser\config.json`** (paste `%LOCALAPPDATA%\mpv-in-browser` into the Explorer address bar). Example:
 ```json
 { "mpv_path": "D:\\Apps\\mpv\\mpv.exe", "mpv_extra_args": ["--fs"] }
 ```
 | Key | Default | Meaning |
 |---|---|---|
-| `mpv_path` | `C:\mpv-lazy\mpv.exe` | Where mpv is. |
+| `mpv_path` | found automatically (`C:\mpv-lazy`, Program Files, Scoop, winget, Chocolatey, PATH…) | Where mpv is. The setup page's **Choose…** button sets this for you. |
 | `mpv_extra_args` | `[]` | Extra mpv options, e.g. `["--fs"]`. |
 | `mpv_prefetch` | `true` | Resolve a video in the background once the pointer reaches its ▶ button, so mpv opens it sooner. |
 | `ytdl_real_path` | `null` | Real `yt-dlp.exe` to use for prefetching; `null` finds it the way mpv does. The helper sets mpv's `ytdl_hook-ytdl_path` to its own small stand-in, which hands over to the real yt-dlp. |
 | `mpv_window_at_once` | `true` | Open mpv's window straight away, showing "Loading video…", instead of only once the video is ready; if a video can't be played, the window says so (rather than mpv waiting hidden in the background). |
-| `pot_path` | `C:\Program Files\DAUM\PotPlayer\PotPlayerMini64.exe` | Where PotPlayer is. |
+| `pot_path` | found automatically | Where PotPlayer is. The setup page's **Choose…** button sets this for you. |
 | `pot_extra_args` | `[]` | Extra PotPlayer options. |
 | `pot_run_as_invoker` | `true` | Start PotPlayer without the "Run as administrator" prompt (for that launch only; no setting is changed). |
 | `pot_new_window` | `true` | Open in a new PotPlayer window instead of handing the link to one already open. |
-| `mpcbe_path` | `C:\Program Files\MPC-BE\mpc-be64.exe` | Where MPC-BE is. |
+| `mpcbe_path` | found automatically | Where MPC-BE is. The setup page's **Choose…** button sets this for you. |
 | `mpcbe_extra_args` / `mpcbe_new_window` | `[]` / `true` | As above. |
-| `mpchc_path` | standard MPC-HC or K-Lite location | Where MPC-HC is. |
+| `mpchc_path` | found automatically (including K-Lite's copy) | Where MPC-HC is. The setup page's **Choose…** button sets this for you. |
 | `mpchc_extra_args` / `mpchc_new_window` / `mpchc_run_as_invoker` | `[]` / `true` / `true` | As above. |
 
 Changes apply the next time you click Play.
 
 ## Troubleshooting
 - **The extension says the helper is missing**: run the setup again, then return to the browser tab.
-- **"… was not found at …"**: the player isn't in its standard folder; set its path in [Settings](#settings).
+- **"… wasn't found"**: click **Choose…** on the setup page and pick the player's .exe; [Settings](#settings) is the
+  fallback.
 - **The player opens but the video doesn't play**: open the same page address directly in the player. If it fails
   there too, update yt-dlp or check the player's setup: [Player setup](PLAYER-SETUP.md).
 - **"… is still open"**: Pop Out Player plays one player at a time; close the player it opened first.
