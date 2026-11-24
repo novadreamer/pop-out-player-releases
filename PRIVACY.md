@@ -32,12 +32,14 @@ popup.
 
 ## What it stores, and where
 Using the browser's local extension storage (`chrome.storage.local`), on your computer only:
-- your playlist and the playlists you save: each video's page address, title, site name and the time you added it,
-  and each saved playlist's name, creation time and whether it is collapsed;
+- your playlists: each video's page address, title, site name and the time you added it,
+  and each playlist's name, creation time and whether it is collapsed;
 - your chosen player;
 - whether the hover buttons are switched on, which side they sit on, and how My Playlists is sorted;
 - whether prefetching is switched on;
-- whether a player opened by the extension is still running.
+- whether a player opened by the extension is still running;
+- whether the helper is installed and, for each player, where the helper found it and its yt-dlp on your PC, so the
+  setup page can show what is missing.
 
 You can remove playlist entries one by one or with **Clear**, and delete saved playlists in My Playlists; uninstalling
 the extension deletes all of it.
@@ -47,7 +49,8 @@ When you click **Play**, the page addresses and titles of the videos to play are
 the **same computer** (using the browser's "native messaging" feature). The helper starts the player you chose with
 those addresses. Nothing leaves your computer at this step.
 
-The extension also asks the helper on your own PC whether it is installed; nothing leaves the computer. In PotPlayer
+The extension also asks the helper on your own PC whether it is installed and whether each player and its yt-dlp are
+in place; nothing leaves the computer. In PotPlayer
 basic mode, the video's address is handed to PotPlayer through Windows (a `potplayer:` link) instead of the helper.
 
 The helper also keeps, on your computer:
@@ -69,7 +72,7 @@ The helper also keeps, on your computer:
 - **Communicate with cooperating native applications** (`nativeMessaging`): to pass addresses to the helper on
   your PC.
 - **Context menus**: to add "Play in …" and "Add to playlist" to the right-click menu.
-- **Storage**: to keep your playlist and settings on your computer.
+- **Storage**: to keep your playlists and settings on your computer.
 
 ## Children
 The extension is not aimed at children and collects no data from anyone.
