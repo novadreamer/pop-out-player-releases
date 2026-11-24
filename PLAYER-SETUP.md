@@ -16,7 +16,13 @@ JavaScript runtime it uses to read YouTube's player code).
 You only need to set up the players you will actually use.
 
 ## Getting the files
-- **yt-dlp**: download `yt-dlp.exe` from the [yt-dlp releases page](https://github.com/yt-dlp/yt-dlp/releases/latest).
+- **yt-dlp**: these links download `yt-dlp.exe` itself (keep that name), then put it where the table above says:
+  - **[Stable `yt-dlp.exe`](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)**: take this one.
+  - **[Nightly `yt-dlp.exe`](https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp.exe)**:
+    built every day with the newest site fixes. If a site stops working with Stable, download this over it.
+
+  On the [releases page](https://github.com/yt-dlp/yt-dlp/releases/latest) the file you want is `yt-dlp.exe`; the
+  others (`yt-dlp_x86.exe`, `yt-dlp_win.zip`, the one named just `yt-dlp`, …) are builds you don't need.
 - **Deno**: download `deno-x86_64-pc-windows-msvc.zip` from the
   [Deno releases page](https://github.com/denoland/deno/releases/latest) and take `deno.exe` out of it.
 
@@ -32,7 +38,8 @@ itself.
   `mpv.exe`. Nothing to add.
 - **A plain mpv build**: put `yt-dlp.exe` and `deno.exe` next to `mpv.exe` (mpv's built-in yt-dlp support looks
   there first, then on `PATH`).
-- If mpv is not at `C:\mpv-lazy\mpv.exe`, set `mpv_path` in your settings file (see [Settings](README.md#settings)).
+- mpv is found automatically in the usual install folders. If it is somewhere else, use **Choose…** on the setup
+  page; the settings file is the fallback (see [Settings](README.md#settings)).
 - Several videos open as mpv's own playlist; mpv's usual keys move between them (`<` and `>` by default).
 
 ## PotPlayer (special case)
@@ -67,14 +74,16 @@ Other PotPlayer notes:
 - Recent MPC-BE installers include `yt-dlp.exe` and `deno.exe` in the program folder
   (`C:\Program Files\MPC-BE\`). If yours does not, copy them in.
 - Several videos open as MPC-BE's own playlist in a new window.
-- If MPC-BE is somewhere else, set `mpcbe_path` in your settings file (see [Settings](README.md#settings)).
+- MPC-BE is found automatically in the usual install folders. If it is somewhere else, use **Choose…** on the setup
+  page; the settings file is the fallback (see [Settings](README.md#settings)).
 
 ## MPC-HC
 - Copy `yt-dlp.exe` and `deno.exe` into MPC-HC's program folder (for example `C:\Program Files\MPC-HC\`, or
   `C:\Program Files (x86)\K-Lite Codec Pack\MPC-HC64\` for the K-Lite copy).
 - In **Options → Advanced**, `UseYDL` must be `true` (the default). `YDLMaxHeight` sets the highest quality it
   picks.
-- Pop Out Player finds MPC-HC in its usual standalone and K-Lite locations; otherwise set `mpchc_path`.
+- Pop Out Player finds MPC-HC in its usual standalone and K-Lite locations. If it is somewhere else, use **Choose…**
+  on the setup page; the settings file is the fallback.
 
 ## Checking a player on its own
 If a video will not play from Pop Out Player, paste the same page address into the player directly (in most players,
