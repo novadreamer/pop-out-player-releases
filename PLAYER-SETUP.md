@@ -49,7 +49,7 @@ PotPlayer does not call yt-dlp by itself. It handles web addresses through **ext
 - **YouTube** (`MediaPlayParse - YouTube`): PotPlayer's own built-in YouTube support. It needs no yt-dlp at all
   and handles YouTube links on its own.
 - **yt-dlp** (`MediaPlayParse - yt-dlp`): a separate extension that uses yt-dlp, which is what makes other sites
-  (Vimeo, Dailymotion, Twitch, Rumble, Bilibili, Tubi, …) play in PotPlayer. Recent PotPlayer versions include
+  play in PotPlayer. Recent PotPlayer versions include
   it; otherwise it comes from [PotPlayer-Extension_yt-dlp](https://github.com/hgcat-360/PotPlayer-Extension_yt-dlp).
 
 Setup:
@@ -88,5 +88,5 @@ Other PotPlayer notes:
 ## Checking a player on its own
 If a video will not play from Pop Out Player, paste the same page address into the player directly (in most players,
 **Open → Open URL**, or `Ctrl+U`). If it fails there too, the problem is the player's yt-dlp setup above, not the
-extension. Remember that DRM-protected video (Netflix, Disney+, the HD versions on Tubi, …) cannot play in any of
+extension. Remember that DRM-protected (copy-protected) video from paid streaming services cannot play in any of
 these players.
