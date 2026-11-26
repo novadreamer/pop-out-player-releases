@@ -4,7 +4,8 @@ Pop Out Player is a browser extension that plays the video you're watching (or a
 player: **mpv**, **PotPlayer**, **MPC-BE** or **MPC-HC**. Hover over a video or thumbnail and press **▶**.
 
 This page hosts the **helper app** the extension needs. Browsers aren't allowed to start programs themselves, so the
-small helper does that for them. It's needed for mpv, MPC-BE, MPC-HC, playlists and faster opening. PotPlayer also
+small helper does that for them. It's needed for mpv, MPC-BE, MPC-HC, playlists, faster opening and continuing
+videos where you left off. PotPlayer also
 has a basic mode that works without it.
 
 ## Install the helper
@@ -23,6 +24,17 @@ To remove it, uninstall **Pop Out Player Helper** in Windows **Settings → Apps
 The helper doesn't include a player or yt-dlp (the tool players use to open YouTube and other web pages). mpv-lazy,
 recent MPC-BE installers and PotPlayer's yt-dlp extension come with it; for anything else see
 **[Player setup](PLAYER-SETUP.md)**.
+
+## Continue where you left off, and video quality
+Both are new in 3.10 and set in the extension's toolbar popup. They need helper 3.10 or newer; with an older helper
+the popup asks you to update it.
+- **Continue where you left off**: how far you watched a video, on its page or in mpv, is remembered on your PC and
+  used the next time you play it, also from a playlist. In mpv every video of a playlist continues from its own point;
+  PotPlayer, MPC-BE and MPC-HC continue only the first one, and only time watched on the page counts for them (they
+  can't report their position). A video watched to the end starts from the beginning next time.
+- **Video quality** (mpv only): **Automatic** leaves it to mpv's own settings, **Best** asks for the highest
+  available, or pick a limit from 4K down to 480p. For the other players, see
+  [Player setup → Video quality](PLAYER-SETUP.md#video-quality).
 
 ## Settings
 The helper finds your players by itself, and if one is somewhere unusual, the setup page's **Choose…** button
@@ -56,6 +68,9 @@ Changes apply the next time you click Play.
 - **The player opens but the video doesn't play**: open the same page address directly in the player. If it fails
   there too, update yt-dlp or check the player's setup: [Player setup](PLAYER-SETUP.md).
 - **"… is still open"**: Pop Out Player plays one player at a time; close the player it opened first.
+- **A video doesn't continue where you left off**: check that **Continue where you left off** is on in the popup and
+  that the helper is 3.10 or newer. Videos shorter than 30 seconds, live streams, and a video you watched for less
+  than 5 seconds aren't remembered.
 
 Problems or ideas: [open an issue](https://github.com/novadreamer/pop-out-player-releases/issues).
 
