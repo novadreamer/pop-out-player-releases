@@ -5,8 +5,10 @@ player: **mpv**, **PotPlayer**, **MPC-BE** or **MPC-HC**. Hover over a video or 
 
 This page hosts the **helper app** the extension needs. Browsers aren't allowed to start programs themselves, so the
 small helper does that for them. It's needed for mpv, MPC-BE, MPC-HC, playlists, faster opening and continuing
-videos where you left off. PotPlayer also
-has a basic mode that works without it.
+videos where you left off. PotPlayer also has a basic mode that works without it.
+
+Each release also offers the extension itself, for anyone who'd rather load it in developer mode than install it from
+the store: see [Load the extension in developer mode](#load-the-extension-in-developer-mode-optional).
 
 ## Install the helper
 1. **[Download PopOutPlayerHelperSetup.exe](https://github.com/novadreamer/pop-out-player-releases/releases/latest/download/PopOutPlayerHelperSetup.exe)**
