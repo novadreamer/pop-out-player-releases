@@ -20,6 +20,19 @@ The extension's setup page notices the helper by itself within a couple of secon
 
 To remove it, uninstall **Pop Out Player Helper** in Windows **Settings → Apps**.
 
+## Load the extension in developer mode (optional)
+Most people should install Pop Out Player from the Chrome Web Store, which keeps it updated. If you'd rather load it
+yourself (to try a version before it reaches the store, or to keep an older one):
+1. **[Download PopOutPlayerExtension.zip](https://github.com/novadreamer/pop-out-player-releases/releases/latest/download/PopOutPlayerExtension.zip)**
+   (the latest version; earlier versions are under [Releases](https://github.com/novadreamer/pop-out-player-releases/releases)).
+2. Extract it into a folder you'll keep (the browser loads the extension from that folder every time it starts).
+3. Open `chrome://extensions` (`edge://extensions`, `brave://extensions`, …), turn on **Developer mode**, click
+   **Load unpacked** and choose the extracted folder (the one with `manifest.json` in it).
+
+A copy loaded this way doesn't update itself: to update, download the new zip, replace the folder's contents and
+click the extension's reload ↻ button. It works with the same helper app. Don't keep it switched on together with
+the store version, or every video gets two sets of buttons.
+
 ## Your player needs yt-dlp
 The helper doesn't include a player or yt-dlp (the tool players use to open YouTube and other web pages). mpv-lazy,
 recent MPC-BE installers and PotPlayer's yt-dlp extension come with it; for anything else see
