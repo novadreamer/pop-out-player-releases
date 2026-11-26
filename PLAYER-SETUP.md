@@ -42,6 +42,19 @@ itself.
   page; the settings file is the fallback (see [Settings](README.md#settings)).
 - Several videos open as mpv's own playlist; mpv's usual keys move between them (`<` and `>` by default).
 
+## Video quality
+
+The popup's **Video quality** setting applies to **mpv**: **Automatic** (the default) leaves the choice to mpv and its
+own settings; **Best** asks for the highest available; or pick a limit from 4K down to 480p. It works both when it
+resolves a page through yt-dlp and when it plays the site's own HLS stream. With a limit, mpv takes the highest
+quality available up to it (a video with nothing that small still plays).
+
+The other players keep their own quality setting, so set it there once:
+- **MPC-BE**: **Options → Online Services**, the yt-dlp maximum resolution.
+- **MPC-HC**: **Options → Advanced → `YDLMaxHeight`**.
+- **PotPlayer**: its YouTube and yt-dlp extensions offer the site's qualities to PotPlayer; choose the quality in
+  PotPlayer itself.
+
 ## PotPlayer (special case)
 PotPlayer does not call yt-dlp by itself. It handles web addresses through **extensions**, listed in
 **Preferences (F5) → Extensions → Media Playback**:
