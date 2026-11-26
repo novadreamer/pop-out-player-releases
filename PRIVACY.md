@@ -1,6 +1,6 @@
 # Privacy Policy: Pop Out Player
 
-_Last updated: 23 November 2026_
+_Last updated: 25 November 2026_
 
 Pop Out Player is a browser extension, with a small helper program on your PC, that opens online videos in a video
 player installed on your own computer. This policy explains what it touches. In short: **it collects nothing, sends
@@ -30,13 +30,18 @@ read from the browser's list of what the page downloaded). They stay in the brow
 are passed only to mpv on your computer when you click Play; YouTube is not touched, and you can turn this off in the
 popup.
 
+If **Continue where you left off** is on, the extension also notes how far you have watched the page's main video,
+about every five seconds while it plays and when you pause or leave it, so the video can continue from there later.
+
 ## What it stores, and where
 Using the browser's local extension storage (`chrome.storage.local`), on your computer only:
 - your playlists: each video's page address, title, site name and the time you added it,
   and each playlist's name, creation time and whether it is collapsed;
 - your chosen player;
 - whether the hover buttons are switched on, which side they sit on, and how My Playlists is sorted;
-- whether prefetching is switched on;
+- whether prefetching is switched on, and the video quality you chose;
+- while **Continue where you left off** is on: how far you watched each video (its page address, the position, its
+  length and when), for at most the 400 most recent videos. A video watched to the end is forgotten;
 - whether a player opened by the extension is still running;
 - whether the helper is installed and, for each player, where the helper found it and its yt-dlp on your PC, so the
   setup page can show what is missing.
@@ -58,6 +63,9 @@ basic mode, the video's address is handed to PotPlayer through Windows (a `potpl
 The helper also keeps, on your computer:
 - for PotPlayer or mpv with several videos, a playlist file (the videos' addresses and titles) in
   `%LOCALAPPDATA%\mpv-in-browser\playlists` (the 20 newest of each kind are kept);
+- while mpv runs: a small file with the start position of each video in a playlist (the 20 newest are kept), and one
+  where mpv notes how far each video was watched. When mpv closes, the helper passes those positions back to the
+  extension and deletes that file;
 - a log file (`%LOCALAPPDATA%\mpv-in-browser\host.log`, kept under about 1 MB) recording which player was started and how many videos it got. Error lines can
   include part of a rejected address.
 
@@ -74,7 +82,7 @@ The helper also keeps, on your computer:
 - **Communicate with cooperating native applications** (`nativeMessaging`): to pass addresses to the helper on
   your PC.
 - **Context menus**: to add "Play in …" and "Add to playlist" to the right-click menu.
-- **Storage**: to keep your playlists and settings on your computer.
+- **Storage**: to keep your playlists, settings and (if switched on) how far you watched each video on your computer.
 
 ## Children
 The extension is not aimed at children and collects no data from anyone.
